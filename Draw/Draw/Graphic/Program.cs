@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Draw.Graphic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Draw
+namespace GPIApp.Graphic
 {
     internal static class Program
     {

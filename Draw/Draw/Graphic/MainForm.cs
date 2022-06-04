@@ -1,4 +1,4 @@
-﻿using Draw.src.Processors;
+﻿using GPIApp.Server;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Draw
+namespace Draw.Graphic
 {
     public partial class MainForm : Form
     {
-        private DialogProcessor dialogProcessor = new DialogProcessor();
+        private Service dialogProcessor = new Service();
 
         public MainForm()
         {
@@ -28,7 +28,7 @@ namespace Draw
 
         private void viewPort_Paint(object sender, PaintEventArgs e)
         {
-            dialogProcessor.ReDraw(sender, e);
+            dialogProcessor.Draw(e.Graphics);
         }
     }
 }

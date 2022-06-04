@@ -1,4 +1,4 @@
-﻿namespace Draw
+﻿namespace Draw.Graphic
 {
     partial class MainForm
     {

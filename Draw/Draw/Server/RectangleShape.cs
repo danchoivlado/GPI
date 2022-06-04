@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Draw.src.Model
+namespace GPIApp.Server
 {
     public class RectangleShape : Shape
     {
@@ -16,13 +16,9 @@ namespace Draw.src.Model
 
         public override void DrawSelf(Graphics grfx)
         {
-            base.DrawSelf(grfx);
-            base.RotateShape(grfx);
-
             grfx.FillRectangle(new SolidBrush(Color.FromArgb(Opacity, FillColor)), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
             grfx.DrawRectangle(new Pen(BorderColor, BorderWidth), Rectangle.X, Rectangle.Y, Rectangle.Width, Rectangle.Height);
             grfx.ResetTransform();
-
         }
     }
 }

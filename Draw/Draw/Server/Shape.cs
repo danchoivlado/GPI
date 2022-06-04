@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Draw.src.Model
+namespace GPIApp.Server
 {
     public abstract class Shape
     {
@@ -42,16 +42,5 @@ namespace Draw.src.Model
         {
 
         }
-
-        public virtual void RotateShape(Graphics grfx)
-        {
-
-            grfx.TranslateTransform(Rectangle.X + Rectangle.Width / 2, Rectangle.Y + Rectangle.Height / 2);
-            grfx.RotateTransform(Angle);
-
-            grfx.TranslateTransform(-(Rectangle.X + Rectangle.Width / 2), -(Rectangle.Y + Rectangle.Height / 2));
-
-        }
-
     }
 }
