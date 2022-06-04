@@ -2,23 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Draw.src.Processors
 {
-    public class DialogProcessor
+    public class DialogProcessor : DisplayProcessor
     {
-        public List<RectangleShape> RectangleList { get; set; }
-
-
         public DialogProcessor()
         {
             this.Selection = new List<Shape>();
-            this.RectangleList = new List<RectangleShape>();
         }
 
         public List<Shape> Selection { get; set; }
@@ -36,21 +30,13 @@ namespace Draw.src.Processors
             rect.Opacity = 255;
             rect.BorderWidth = 1;
 
-            RectangleList.Add(rect);
+            ShapeList.Add(rect);
         }
 
-        public void ReDraw(object sender, PaintEventArgs e)
-        {
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            Draw(e.Graphics);
-        }
 
-        public void Draw(Graphics grfx)
+        public override void Draw(Graphics grfx)
         {
-            foreach (RectangleShape item in RectangleList)
-            {
-                item.DrawSelf(grfx);
-            }
+            base.Draw(grfx);
 
             foreach (var item in Selection)
             {
