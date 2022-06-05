@@ -29,25 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel = new Dragable.DoubleBufferedPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.drawRectangleSpeedButton = new System.Windows.Forms.ToolStripButton();
+            this.pointerStripButton = new System.Windows.Forms.ToolStripButton();
+            this.panel = new Dragable.DoubleBufferedPanel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel
-            // 
-            this.panel.Location = new System.Drawing.Point(13, 46);
-            this.panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(1701, 670);
-            this.panel.TabIndex = 0;
-            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pointerStripButton,
             this.drawRectangleSpeedButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -64,6 +57,28 @@
             this.drawRectangleSpeedButton.Size = new System.Drawing.Size(34, 28);
             this.drawRectangleSpeedButton.Text = "toolStripButton1";
             this.drawRectangleSpeedButton.Click += new System.EventHandler(this.drawRectangleSpeedButton_Click);
+            // 
+            // pointerStripButton
+            // 
+            this.pointerStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pointerStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pointerStripButton.Image")));
+            this.pointerStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pointerStripButton.Name = "pointerStripButton";
+            this.pointerStripButton.Size = new System.Drawing.Size(34, 28);
+            this.pointerStripButton.Text = "toolStripButton1";
+            this.pointerStripButton.Click += new System.EventHandler(this.pointerStripButton_Click);
+            // 
+            // panel
+            // 
+            this.panel.Location = new System.Drawing.Point(13, 46);
+            this.panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1701, 670);
+            this.panel.TabIndex = 0;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
+            this.panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_MouseDown);
+            this.panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_MouseMove);
+            this.panel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_MouseUp);
             // 
             // Form1
             // 
@@ -86,6 +101,7 @@
         private DoubleBufferedPanel panel;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton drawRectangleSpeedButton;
+        private System.Windows.Forms.ToolStripButton pointerStripButton;
     }
 }
 

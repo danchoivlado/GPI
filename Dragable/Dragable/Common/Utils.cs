@@ -37,5 +37,19 @@ namespace Dragable.Common
 
             return rectangleShape;
         }
+
+        public static Shape FindInShapeList(Point location, List<Shape> shapes)
+        {
+            for (int i = shapes.Count - 1; i >= 0; i--)
+            {
+                if (shapes[i].Contains(location))
+                {
+
+                    return shapes[i];
+                }
+            }
+
+            return null;
+        }
     }
 }

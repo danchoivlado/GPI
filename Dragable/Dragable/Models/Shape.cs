@@ -9,16 +9,72 @@ namespace Dragable.Models
 
     public abstract class Shape
     {
-        public virtual RectangleF Rectangle { get; set; }
-        public virtual float Width { get; set; }
-        public virtual float Height { get; set; }
-        public virtual PointF Location { get; set; }
-        public virtual Color FillColor { get; set; }
-        public virtual string Name { get; set; }
-        public virtual Color BorderColor { get; set; }
-        public virtual int Opacity { get; set; }
-        public virtual float BorderWidth { get; set; }
-        public virtual float Angle { get; set; }
+        private RectangleF rectangle;
+        public virtual RectangleF Rectangle
+        {
+            get { return rectangle; }
+            set { rectangle = value; }
+        }
+
+        public virtual float Width
+        {
+            get { return Rectangle.Width; }
+            set { rectangle.Width = value; }
+        }
+
+        public virtual float Height
+        {
+            get { return Rectangle.Height; }
+            set { rectangle.Height = value; }
+        }
+
+        public virtual PointF Location
+        {
+            get { return Rectangle.Location; }
+            set { rectangle.Location = value; }
+        }
+
+        private Color fillColor;
+        public virtual Color FillColor
+        {
+            get { return fillColor; }
+            set { fillColor = value; }
+        }
+
+        private string name;
+        public virtual string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private Color borderColor;
+        public virtual Color BorderColor
+        {
+            get { return borderColor; }
+            set { borderColor = value; }
+        }
+
+        private int opacity;
+        public virtual int Opacity
+        {
+            get { return opacity; }
+            set { opacity = value; }
+        }
+
+        private float borderWidth;
+        public virtual float BorderWidth
+        {
+            get { return borderWidth; }
+            set { borderWidth = value; }
+        }
+
+        private float angle;
+        public virtual float Angle
+        {
+            get { return angle; }
+            set { angle = value; }
+        }
 
         public Shape()
         {
@@ -48,6 +104,12 @@ namespace Dragable.Models
 
         public virtual void DrawSelf(Graphics grfx)
         {
+
+        }
+
+        public virtual void Move(float dx, float dy)
+        {
+            Location = new PointF(Location.X + dx, Location.Y + dy);
 
         }
     }
